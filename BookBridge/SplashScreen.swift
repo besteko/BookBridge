@@ -1,8 +1,8 @@
 //
-//  ContentView.swift
-//  bitirmeprojesi
+//  SplashScreen.swift
+//  BookBridge
 //
-//  Created by Beste Kocaoglu on 6.11.2023.
+//  Created by Beste Kocaoglu on 15.11.2023.
 //
 
 import SwiftUI
@@ -71,7 +71,7 @@ struct SplashScreen: View {
                                         .navigationBarBackButtonHidden(true )
                     }
                                     
-                                    NavigationLink(destination: SignUpView()) {
+                                    NavigationLink(destination: RegisterView()) {
                                         Text("Hesabınız yok mu? Kaydol")
                                             .padding(.vertical, 40)
                                             .foregroundColor(.brown)
