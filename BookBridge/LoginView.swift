@@ -27,6 +27,7 @@ struct LoginView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     
+                Text("beste")
                     
 
                 if let error = loginError {
