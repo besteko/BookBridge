@@ -16,47 +16,58 @@ struct LoginView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                TextField("Email", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            ZStack {
+                Color(red: 1.2, green: 1.1, blue: 0.9)
+                    .ignoresSafeArea()
+
+                VStack {
+
+                    Image("bookicon")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .shadow(color: .orange, radius: 10)
+
+                    TextField("Email", text: $email)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+
+                    SecureField("Şifre", text: $password)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+
+                    if let error = loginError {
+                        Text("Hata: \(error.localizedDescription)")
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+
+                    Button(action: {
+                        login()
+                    }) {
+                        Text("Giriş Yap")
+                            .padding()
+                            .frame(width: 200, height: 50)
+                            .background(Color.orange)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
                     .padding()
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
 
-                SecureField("Şifre", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    
-                Text("beste")
-                    
+                    Spacer()
 
-                if let error = loginError {
-                    Text("Hata: \(error.localizedDescription)")
-                        .foregroundColor(.red)
-                }
+                    NavigationLink(destination: HomeView(bookViewModel: BookViewModel()).navigationBarBackButtonHidden(true), isActive: $isLoggedIn) {
+                        EmptyView()
+                    }
+                    .navigationBarHidden(true) // Bu satırı ekleyerek navigation bar'ı gizle
 
-                NavigationLink(destination: HomeView(bookViewModel: BookViewModel()), isActive: $isLoggedIn) {
-                    EmptyView()
-                }
-
-                Button(action: {
-                    login()
-                }) {
-                    Text("Giriş Yap")
                 }
                 .padding()
 
-                Spacer()
             }
-            .padding()
-            .onAppear {
-                // Eğer kullanıcı kayıt olma ekranından yönlendirilmişse, otomatik olarak giriş yap
-                if isLoggedIn {
-                    // Burada ana sayfaya geçiş yapabilirsiniz
-                }
-            }
-           // .navigationBarTitle("Giriş Yap")
             .navigationBarBackButtonHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle()) // iPhone'lar için NavigationView stil ayarı
         }
     }
 
@@ -78,4 +89,3 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
-

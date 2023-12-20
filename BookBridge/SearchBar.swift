@@ -10,13 +10,14 @@ import SwiftUI
 struct SearchBar: View {
     @Binding var searchText: String
     var placeholder: String
+    var onCommit: () -> Void
 
     var body: some View {
         HStack {
-            TextField(placeholder, text: $searchText)
+            TextField(placeholder, text: $searchText, onCommit: onCommit)
                 .padding(7)
                 .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
+                .background(Color(.white))
                 .cornerRadius(8)
                 .padding(.horizontal, 10)
                 .overlay(
@@ -24,7 +25,7 @@ struct SearchBar: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 8)
+                            .padding(.leading, 11)
 
                         if !searchText.isEmpty {
                             Button(action: {
@@ -32,7 +33,7 @@ struct SearchBar: View {
                             }) {
                                 Image(systemName: "multiply.circle.fill")
                                     .foregroundColor(.gray)
-                                    .padding(.trailing, 8)
+                                    .padding(.trailing,13)
                             }
                         }
                     }

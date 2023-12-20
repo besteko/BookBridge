@@ -7,22 +7,39 @@
 
 import SwiftUI
 
+
 struct BookListView: View {
+    @State private var isDetailViewPresented = false
     @ObservedObject var bookViewModel: BookViewModel
 
-    var body: some View {
-        VStack {
-            SearchBar(searchText: $bookViewModel.searchText, placeholder: "Kitap Ara")
+    init(bookViewModel: BookViewModel) {
+        self.bookViewModel = bookViewModel
+    }
 
-            List(bookViewModel.filteredBooks) { book in
-                NavigationLink(destination: BookDetailView(book: book)) {
-                    BookRowView(book: book)
+    var body: some View {
+        List(bookViewModel.books) { book in
+            NavigationLink(destination: BookDetailView(isPresented: $isDetailViewPresented, bookViewModel: BookViewModel(selectedBook: book))) {
+                BookRowView(book: book) {
+                    removeBook(book)
                 }
             }
-            .listStyle(PlainListStyle())
+
+        }
+    }
+
+    private func removeBook(_ book: Book) {
+        bookViewModel.removeBook(bookID: book.id ?? "") { error in
+            // Kitap kaldırıldıktan sonra yapılacak işlemler
+            if error == nil {
+                // Kitap başarıyla kaldırıldı, belki başka bir şey yapabilirsiniz
+            }
         }
     }
 }
+
+
+
+
 
 
 

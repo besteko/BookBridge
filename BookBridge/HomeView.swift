@@ -7,36 +7,78 @@
 
 import SwiftUI
 
-
 struct HomeView: View {
-    @ObservedObject var bookViewModel: BookViewModel
+    @State private var refreshID = UUID()
+    @State private var searchText = ""
+    @StateObject var bookViewModel = BookViewModel()
+    @State private var filteredBooks: [Book] = [] // Burada filteredBooks'u state olarak ekledik
 
     var body: some View {
-        NavigationView {
-            VStack {
-                // Rastgele kitapları göster
-                Text("Rastgele Kitaplar")
-                    .font(.title)
-
-                BookListView(bookViewModel: bookViewModel)
-
-                // Kitap türlerine göre filtrelenmiş kitapları göster
-                ForEach(bookViewModel.genres, id: \.self) { genre in
-                    NavigationLink(destination: FilteredBooksView(bookViewModel: bookViewModel, selectedGenre: genre)) {
-                        Text("\(genre) Kitapları")
-                            .font(.title2)
-                            .foregroundColor(.blue)
+        TabView {
+            NavigationView {
+                VStack {
+                    if isHomeView {
+                        HStack {
+                            Image("bookstack")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, height: 50)
+                                .padding()
+                            SearchBar(searchText: $searchText, placeholder: "", onCommit: filterBooks)
+                                .padding(.bottom, 10)
+                        }
                     }
+                    BookCardGridView(bookViewModel: bookViewModel, searchText: $searchText, refreshID: $refreshID)
+                        .id(refreshID)
                 }
-
-                // Kitap ekleme sayfasına yönlendirme
-                NavigationLink(destination: AddBookView(bookViewModel: bookViewModel)) {
-                    Text("Kitap Ekle")
-                        .font(.title2)
-                        .foregroundColor(.green)
-                }
+                .background(Color(red: 1.2, green: 1.1, blue: 0.9))
             }
-            .navigationBarTitle("Ana Sayfa")
+            .tabItem {
+                Label("Ana Sayfa", systemImage: "house")
+            }
+
+            NavigationView {
+                AddBookView(bookViewModel: bookViewModel)
+            }
+            .tabItem {
+                Label("Kitap Ekle", systemImage: "book")
+            }
+
+            NavigationView {
+                ProfileView(bookViewModel: bookViewModel)
+            }
+            .tabItem {
+                Label("Profil", systemImage: "person")
+            }
+
+            NavigationView {
+                BorrowedBooksView(bookViewModel: bookViewModel)
+                    .navigationBarTitle("Ödünç Al/Kirala")
+            }
+            .tabItem {
+                Label("Ödünç Al", systemImage: "person.2.square.stack")
+            }
         }
+        .background(Color.white)
+        .accentColor(.orange)
+        .environmentObject(bookViewModel)
+    }
+
+    private func filterBooks() {
+        filteredBooks = bookViewModel.filterBooks(with: searchText)
+    }
+
+
+    private var isHomeView: Bool {
+        return true
     }
 }
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
+}
+
+
+
