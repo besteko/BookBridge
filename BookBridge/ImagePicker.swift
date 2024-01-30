@@ -1,10 +1,9 @@
 //
-//  SwiftUIView.swift
-//  BookBridge
+//  ImagePickerView.swift
+//  bitirmedeneme
 //
-//  Created by Beste Kocaoglu on 29.11.2023.
+//  Created by Beste Kocaoglu on 21.11.2023.
 //
-
 
 import SwiftUI
 import Firebase
@@ -163,6 +162,9 @@ extension View {
         self.modifier(ImagePickerModifier(isPresented: isPresented, image: image))
     }
 }
+
+
+
 
 
 

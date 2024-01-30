@@ -1,10 +1,10 @@
+
 //
 //  LoginView.swift
-//  BookBridge
+//  bitirmedeneme
 //
-//  Created by Beste Kocaoglu on 15.11.2023.
+//  Created by Beste Kocaoglu on 18.11.2023.
 //
-
 import SwiftUI
 import Firebase
 
@@ -69,6 +69,10 @@ struct LoginView: View {
             .navigationBarBackButtonHidden(true)
             .navigationViewStyle(StackNavigationViewStyle()) // iPhone'lar için NavigationView stil ayarı
         }
+        .onAppear {
+            // Uygulama başladığında kullanıcının oturum bilgilerini kontrol et
+           // checkIfUserIsLoggedIn()
+        }
     }
 
     func login() {
@@ -79,9 +83,26 @@ struct LoginView: View {
             } else {
                 print("Giriş başarılı")
                 self.isLoggedIn = true
+
+                // Oturum açma başarılıysa kullanıcının oturum bilgilerini güvenli bir şekilde sakla
+               // saveUserCredentials()
             }
         }
     }
+
+  /*  func saveUserCredentials() {
+        // UserDefaults kullanarak e-posta bilgisini sakla
+        UserDefaults.standard.set(email, forKey: "userEmail")
+    }
+
+    func checkIfUserIsLoggedIn() {
+        // UserDefaults'tan kaydedilmiş e-posta bilgisini kontrol et
+        if let userEmail = UserDefaults.standard.string(forKey: "userEmail") {
+            // Eğer e-posta bilgisi mevcutsa, kullanıcı oturum açmış gibi davran
+            self.email = userEmail
+            self.isLoggedIn = true
+        }
+    }*/
 }
 
 struct LoginView_Previews: PreviewProvider {
@@ -89,3 +110,7 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
+
+
+

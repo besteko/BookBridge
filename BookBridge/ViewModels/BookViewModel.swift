@@ -1,10 +1,9 @@
 //
 //  BookViewModel.swift
-//  BookBridge
+//  bitirmedeneme
 //
-//  Created by Beste Kocaoglu on 20.11.2023.
+//  Created by Beste Kocaoglu on 18.11.2023.
 //
-
 import SwiftUI
 import Firebase
 import FirebaseAuth
@@ -211,11 +210,42 @@ class BookViewModel: ObservableObject {
         }
     }
 
+    func updateBookBorrowStatus(isBorrowed: Bool, completion: @escaping (Error?) -> Void) {
+        guard let selectedBook = selectedBook, let bookIndex = books.firstIndex(of: selectedBook) else {
+            let error = NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Seçili kitap bulunamadı."])
+            completion(error)
+            return
+        }
 
+        // Güncelleme yerine eklemeyi tercih ediyorsanız, mevcut kitabı kaldırın ve güncellenmiş halini ekleyin
+        var updatedBook = selectedBook
+        updatedBook.isBorrowed = isBorrowed
+        books[bookIndex] = updatedBook
+
+        // Firebase veya uygun depolama yöntemine güncellemeyi iletin
+        updateBookInfo(
+            book: updatedBook,
+            updatedTitle: updatedBook.title,
+            updatedAuthor: updatedBook.author,
+            updatedGenre: updatedBook.genre,
+            updatedImageUrl: updatedBook.imageUrl ?? "",
+            updatedIsBorrowed: updatedBook.isBorrowed
+        ) { error in
+            completion(error)
+        }
+    }
+    func checkBorrowStatus(for book: Book, completion: @escaping (Bool) -> Void) {
+        // Kitabın ödünç alınıp alınmadığını kontrol etmek için gerekli işlemleri yapın
+        // Örnek olarak, book.isBorrowed değerini kullanabilirsiniz.
+        let isBorrowed = book.isBorrowed
+        completion(isBorrowed)
+    }
 
      
      }
+     
     
+
 
 
 

@@ -1,8 +1,8 @@
 //
 //  BookUpdateView.swift
-//  BookBridge
+//  bitirmedeneme
 //
-//  Created by Beste Kocaoglu on 17.12.2023.
+//  Created by Beste Kocaoglu on 7.12.2023.
 //
 
 import SwiftUI
@@ -78,7 +78,7 @@ struct BookUpdateView: View {
                 Toggle("Ödünç Alındı mı?", isOn: $updatedIsBorrowed)
                     .toggleStyle(SwitchToggleStyle(tint: .blue))
                     .padding()
-                
+                //Beste
                 //TextField("Yeni Resim Data", text: $updatedImageDataString)
                 //   .textFieldStyle(RoundedBorderTextFieldStyle())
                 //  .padding()
@@ -113,6 +113,7 @@ struct BookUpdateView: View {
                                 }
                             })
                         }
+                        
                     }
                 }
 
@@ -146,3 +147,12 @@ struct BookUpdateView: View {
         }
     }
 }
+
+
+
+
+
+
+
+
+

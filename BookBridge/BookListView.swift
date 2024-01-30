@@ -42,5 +42,3 @@ struct BookListView: View {
 
 
 
-
-

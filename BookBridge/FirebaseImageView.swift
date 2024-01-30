@@ -1,8 +1,9 @@
+
 //
 //  FirebaseImageView.swift
-//  BookBridge
+//  bitirmedeneme
 //
-//  Created by Beste Kocaoglu on 29.11.2023.
+//  Created by Beste Kocaoglu on 24.11.2023.
 //
 
 import SwiftUI
@@ -21,3 +22,4 @@ struct FirebaseImageView: View {
             .cornerRadius(5)
     }
 }
+

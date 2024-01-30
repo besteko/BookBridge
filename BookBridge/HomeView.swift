@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  BookBridge
-//
-//  Created by Beste Kocaoglu on 20.11.2023.
-//
-
 import SwiftUI
 
 struct HomeView: View {
@@ -52,8 +45,8 @@ struct HomeView: View {
             }
 
             NavigationView {
-                BorrowedBooksView(bookViewModel: bookViewModel)
-                    .navigationBarTitle("Ödünç Al/Kirala")
+                BorrowedBooksView(viewModel: BorrowedBooksViewModel(borrowingManager: BorrowingManager()), bookViewModel: bookViewModel)
+                   // .navigationBarTitle("Ödünç Al/Kirala")
             }
             .tabItem {
                 Label("Ödünç Al", systemImage: "person.2.square.stack")
@@ -79,6 +72,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-
-
 

@@ -1,8 +1,8 @@
 //
-//  FilteredBookView.swift
-//  BookBridge
+//  FiltretedBooksView.swift
+//  bitirmedeneme
 //
-//  Created by Beste Kocaoglu on 20.11.2023.
+//  Created by Beste Kocaoglu on 18.11.2023.
 //
 
 import SwiftUI
@@ -50,6 +50,10 @@ struct FilteredBooksView: View {
         }
     }
 }
+
+
+
+
 
 
 

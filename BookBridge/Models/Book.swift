@@ -35,7 +35,7 @@ class Book: Identifiable, Codable, ObservableObject {
         return nil
     }*/
     
-    var testImageData: Data? {
+   /* var testImageData: Data? {
         if author == "Mustafa" {
             // Eğer bir şart sağlanıyorsa, özel bir işlem yapılabilir
         }
@@ -43,7 +43,7 @@ class Book: Identifiable, Codable, ObservableObject {
             return imageData
         }
         return nil
-    }
+    }*/
 
     var dictionary: [String: Any] {
         return [
@@ -113,7 +113,6 @@ extension Book: Equatable {
         return lhs.id == rhs.id
     }
 }
-
 
 
 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0DD21D2B695EA80066521B /* BorrowedBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0DD21C2B695EA80066521B /* BorrowedBook.swift */; };
+		9A0DD21F2B695F1A0066521B /* AvatarGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0DD21E2B695F1A0066521B /* AvatarGalleryView.swift */; };
+		9A0DD2212B695F460066521B /* BookBorrowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0DD2202B695F460066521B /* BookBorrowingView.swift */; };
+		9A0DD2232B6960400066521B /* BorrowingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0DD2222B6960400066521B /* BorrowingManager.swift */; };
+		9A0DD2252B6961110066521B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0DD2242B6961110066521B /* UserDefaultManager.swift */; };
 		9A5BD8782B17C006005DD944 /* FirebaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BD8772B17C006005DD944 /* FirebaseImageView.swift */; };
 		9A952BD52B050B6F00457CE0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A952BD42B050B6F00457CE0 /* SplashScreen.swift */; };
 		9A952BE12B050C5C00457CE0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A952BE02B050C5C00457CE0 /* LoginView.swift */; };
@@ -82,6 +87,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0DD21C2B695EA80066521B /* BorrowedBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowedBook.swift; sourceTree = "<group>"; };
+		9A0DD21E2B695F1A0066521B /* AvatarGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarGalleryView.swift; sourceTree = "<group>"; };
+		9A0DD2202B695F460066521B /* BookBorrowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookBorrowingView.swift; sourceTree = "<group>"; };
+		9A0DD2222B6960400066521B /* BorrowingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowingManager.swift; sourceTree = "<group>"; };
+		9A0DD2242B6961110066521B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		9A5BD8772B17C006005DD944 /* FirebaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageView.swift; sourceTree = "<group>"; };
 		9A952BD42B050B6F00457CE0 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		9A952BE02B050C5C00457CE0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -194,23 +204,27 @@
 				9AD130FA2B0B52ED006D68AD /* Views */,
 				9AD130E92B0B50DB006D68AD /* ViewModels */,
 				9AD130E82B0B4FEC006D68AD /* Models */,
-				9A952BD42B050B6F00457CE0 /* SplashScreen.swift */,
-				9AD130E42B0B4C06006D68AD /* RegisterView.swift */,
-				9A952BE02B050C5C00457CE0 /* LoginView.swift */,
 				9AD130EC2B0B51E2006D68AD /* AddBookView.swift */,
+				9A0DD21E2B695F1A0066521B /* AvatarGalleryView.swift */,
+				9A0DD2202B695F460066521B /* BookBorrowingView.swift */,
+				9ABBEB3B2B2F2C790014355A /* BookCardGridView.swift */,
+				9AEC01D32B17BE7300644073 /* BookCardListView.swift */,
 				9AD130EE2B0B5218006D68AD /* BookDetailView.swift */,
 				9AD130F02B0B523B006D68AD /* BookListView.swift */,
 				9AD130F22B0B525F006D68AD /* BookRowView.swift */,
-				9AEC01D32B17BE7300644073 /* BookCardListView.swift */,
+				9ABBEB3D2B2F2D010014355A /* BookUpdateView.swift */,
+				9AEC01D72B17BF1400644073 /* BorrowedBooksView.swift */,
+				9A0DD2222B6960400066521B /* BorrowingManager.swift */,
 				9AD130F42B0B527F006D68AD /* FilteredBooksView.swift */,
+				9A5BD8772B17C006005DD944 /* FirebaseImageView.swift */,
 				9AD130F62B0B52A3006D68AD /* HomeView.swift */,
 				9AEC01CF2B17BDE800644073 /* ImagePicker.swift */,
-				9AEC01D72B17BF1400644073 /* BorrowedBooksView.swift */,
+				9A952BE02B050C5C00457CE0 /* LoginView.swift */,
 				9AEC01D52B17BEC400644073 /* ProfileView.swift */,
-				9A5BD8772B17C006005DD944 /* FirebaseImageView.swift */,
-				9ABBEB3D2B2F2D010014355A /* BookUpdateView.swift */,
-				9ABBEB3B2B2F2C790014355A /* BookCardGridView.swift */,
+				9AD130E42B0B4C06006D68AD /* RegisterView.swift */,
 				9AD130F82B0B52C3006D68AD /* SearchBar.swift */,
+				9A952BD42B050B6F00457CE0 /* SplashScreen.swift */,
+				9A0DD2242B6961110066521B /* UserDefaultManager.swift */,
 				9ABBEA322B014C3C00364BFE /* Assets.xcassets */,
 				9AFD0AAF2B02A8EB009473BC /* GoogleService-Info.plist */,
 				9ABBEA342B014C3C00364BFE /* Preview Content */,
@@ -248,6 +262,7 @@
 			children = (
 				9AEC01D12B17BE3B00644073 /* BookData.swift */,
 				9AD130E62B0B4DAE006D68AD /* Book.swift */,
+				9A0DD21C2B695EA80066521B /* BorrowedBook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -434,8 +449,11 @@
 			files = (
 				9AD130E72B0B4DAE006D68AD /* Book.swift in Sources */,
 				9A952BD52B050B6F00457CE0 /* SplashScreen.swift in Sources */,
+				9A0DD21F2B695F1A0066521B /* AvatarGalleryView.swift in Sources */,
+				9A0DD21D2B695EA80066521B /* BorrowedBook.swift in Sources */,
 				9AD130F52B0B527F006D68AD /* FilteredBooksView.swift in Sources */,
 				9ABBEB3E2B2F2D010014355A /* BookUpdateView.swift in Sources */,
+				9A0DD2232B6960400066521B /* BorrowingManager.swift in Sources */,
 				9AEC01D82B17BF1400644073 /* BorrowedBooksView.swift in Sources */,
 				9AD130F72B0B52A3006D68AD /* HomeView.swift in Sources */,
 				9AD130F92B0B52C3006D68AD /* SearchBar.swift in Sources */,
@@ -447,9 +465,11 @@
 				9AEC01D02B17BDE800644073 /* ImagePicker.swift in Sources */,
 				9A952BE12B050C5C00457CE0 /* LoginView.swift in Sources */,
 				9AD130F32B0B525F006D68AD /* BookRowView.swift in Sources */,
+				9A0DD2212B695F460066521B /* BookBorrowingView.swift in Sources */,
 				9A5BD8782B17C006005DD944 /* FirebaseImageView.swift in Sources */,
 				9AD130F12B0B523B006D68AD /* BookListView.swift in Sources */,
 				9AEC01D42B17BE7300644073 /* BookCardListView.swift in Sources */,
+				9A0DD2252B6961110066521B /* UserDefaultManager.swift in Sources */,
 				9AD130EF2B0B5218006D68AD /* BookDetailView.swift in Sources */,
 				9AD130ED2B0B51E2006D68AD /* AddBookView.swift in Sources */,
 				9ABBEB3C2B2F2C790014355A /* BookCardGridView.swift in Sources */,
